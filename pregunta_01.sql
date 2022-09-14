@@ -17,3 +17,14 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 --
+from IPython.core.magic import register_cell_magic, register_line_magic
+
+@register_line_magic
+def sql(line):
+    line = [
+        l for l in line.split("\n") if l[0:2] != "--" and l[0:2] not in ["--", "##"]
+    ]
+    line = "\n".join(line)
+    return cur.execute(line).fetchall()
+
+%sql SELECT SUM(c12) FROM tbl1;
