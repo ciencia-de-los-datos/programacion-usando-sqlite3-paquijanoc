@@ -40,3 +40,17 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 -- 
+SELECT
+    k0,c16
+FROM
+    tbl1
+WHERE
+     c16 = (SELECT c16 FROM tbl1 WHERE k0 LIKE 'a%' AND C16 LIKE 'a%')
+OR
+     c16 = (SELECT c16 FROM tbl1 WHERE k0 LIKE 'b%' AND C16 LIKE 'b%')
+OR
+     c16 = (SELECT c16 FROM tbl1 WHERE k0 LIKE 'c%' AND C16 LIKE 'c%')
+OR
+     c16 = (SELECT c16 FROM tbl1 WHERE k0 LIKE 'd%' AND C16 LIKE 'd%')
+OR
+     c16 = (SELECT c16 FROM tbl1 WHERE k0 LIKE 'e%' AND C16 LIKE 'e%')
