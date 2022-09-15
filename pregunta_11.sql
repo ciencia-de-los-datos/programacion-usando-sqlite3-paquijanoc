@@ -38,3 +38,4 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 -- 
+SELECT COUNT(c14) FROM tbl1 WHERE c14 LIKE '2018%'
